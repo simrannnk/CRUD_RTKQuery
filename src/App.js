@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import Products from './components/NewProduct/NewProduct';
+import NewProduct from './components/Products/Products';
+import { useState } from 'react';
 
 function App() {
+  const [input, setInput] = useState("");
+  const [isEdit, setIsEdit] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h4>CRUD - using RTK Query</h4>
+      <Products input={input} setInput={setInput}></Products>
+      <NewProduct input={input} setInput={setInput}></NewProduct>
     </div>
   );
 }
